@@ -1,5 +1,5 @@
-# Name:
-# SBUID: 
+# Name: Heejun Chang
+# SBUID: 114856458
 
 # Remove the ellipses (...) when writing your solutions.
 
@@ -8,10 +8,20 @@
 # TODO: Complete the implementation of fahrenheit2celsius () and what_to_wear(). 
 
 def fahrenheit2celsius(fahrenheit): 
-   ...
+   celsius = (5/9) * (fahrenheit - 32)
+   return celsius
 
 def what_to_wear(celsius):
-   ...
+    if celsius < -10:
+       print('Puffy jacket')
+    if -10 <= celsius <= 0:
+       print("Scarf")
+    if 0 < celsius <= 10:
+       print("Sweater")
+    if 10 < celsius <= 20:
+       print("LIght jacket")
+    if 20 < celsius:
+       print('T-shirt')
 
 # ---------------------------- Exercise II --------------------------------------
 # ----------------- Area and perimeter of a triangle  ---------------------------
@@ -19,28 +29,48 @@ def what_to_wear(celsius):
 # compute_triangle_perimeter from scratch  
 
 def shoelace_triangle_area(x1, y1, x2, y2, x3, y3):
-    ...
+    equation1 = (x1*y2 + x2*y3 + x3*y1)
+    equation2 = (x1*y3 + x2*y1 + x3*y2)
+    Area = abs((equation1 - equation2) / 2)
+    return Area
 
 def euclidean_distance(x1, y1, x2, y2):
-    ...
+    d = (((x1 - x2)**2) + ((y1 - y2)**2))**0.5
+    return d
+# p1= [0,0]
+# p2= [3,0]
+# p3= [3,4]
+# print(euclidean_distance(p1, p3))
+# print(shoelace_triangle_area(p1,p2,p3))
 
 def compute_triangle_perimeter(x1, y1, x2, y2, x3, y3):
-    ...
-
+    s1= euclidean_distance(x1, y1, x2, y2)
+    s2= euclidean_distance(x2, y2, x3, y3)
+    s3= euclidean_distance(x1, y1, x3, y3)
+    p= s1+s2+s3
+    return p
+# print(compute_triangle_perimeter(p1,p2,p3))
 
 # ---------------------------- Exercise III -------------------------------------
 # ----------------- Compute the area of a regular polygon -----------------------
 # TODO: Fill the functions deg2rad, apothem  and polygon_area 
 
-
+import math
 def deg2rad(deg):
-    ...
+    rad = int(deg)*(math.pi/180)
+    return rad
+
 
 def apothem(number_sides, length_side):
-   ...
+    n = number_sides
+    s = length_side
+    a = apothem
+    a = s / (2*math.tan(180/n))
+    return a
 
 def polygon_area(number_sides, length_side):
-   ...
+    A = (number_sides*length_side*apothem(number_sides, length_side))/2
+    return A
 
 
 # ---------------------------- Test -------------------------------------
