@@ -1,6 +1,8 @@
 # Name: Heejun Chang
 # SBUID: 114856458
-
+##################### SCORE ######################
+#######  Score:  8/10
+#################################################
 # Remove the ellipses (...) when writing your solutions.
 
 # ---------------------------- Exercise I ---------------------------------------
@@ -69,7 +71,7 @@ def apothem(number_sides, length_side):
     return a
 
 def polygon_area(number_sides, length_side):
-    A = (number_sides*length_side*apothem(number_sides, length_side))/2
+    A = (number_sides*length_side*apothem(number_sides, length_side))/2 # poly are a is wrong --> -2
     return A
 
 
